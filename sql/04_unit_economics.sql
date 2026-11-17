@@ -25,7 +25,7 @@ cac_calc AS (
     FROM marketing_spend ms
     LEFT JOIN users u 
         ON ms.channel = u.channel 
-        AND strftime('%Y-%m', u.reg_date::DATE) = ms.month  -- ИСПРАВЛЕНО
+        AND strftime('%Y-%m', u.reg_date::DATE) = ms.month 
     GROUP BY ms.channel, period
 )
 SELECT 
